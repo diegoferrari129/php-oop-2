@@ -14,7 +14,31 @@
             $this->category = $category;
             $this->subcategory = $subcategory;
         }
+
+        public function getName() {
+            return $this->name;
+        }
+
+        public function getDescription() {
+            return $this->description;
+        }
+
+        public function getPrice() {
+            return $this->price;
+        }
+
+        public function getCategory() {
+            return $this->category;
+        }
+
+        public function getSubCategory() {
+            return $this->subcategory;
+        }
+
     }
+
+    $crochette = new Products('Crocchette', 'Molto buone, testate su esseri umani', '$9999.99', 'pet', 'cibo');
+    var_dump($crochette);
 
 ?>
 
