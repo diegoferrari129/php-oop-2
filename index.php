@@ -1,5 +1,13 @@
 <?php
 
+    class Products {
+        public $name;
+        public $description;
+        public $price;
+        private $category;
+        protected $subcategory;
+    }
+
 ?>
 
 <!DOCTYPE html>
