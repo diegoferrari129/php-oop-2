@@ -6,6 +6,14 @@
         public $price;
         private $category;
         protected $subcategory;
+
+        public function __construct($name, $description, $price, $category, $subcategory) {
+            $this->name = $name;
+            $this->description = $description;
+            $this->price = $price;
+            $this->category = $category;
+            $this->subcategory = $subcategory;
+        }
     }
 
 ?>
