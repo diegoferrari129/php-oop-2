@@ -7,7 +7,7 @@
         private $category;
         protected $subcategory;
 
-        public function __construct($name, $description, $price, $category, $subcategory) {
+        public function __construct($name, $description, $price, Category $category, $subcategory) {
             $this->name = $name;
             $this->description = $description;
             $this->price = $price;
@@ -28,7 +28,7 @@
         }
 
         public function getCategory() {
-            return $this->category;
+            return $this->category->type;
         }
 
         public function getSubCategory() {
@@ -37,7 +37,15 @@
 
     }
 
-    $crochette = new Products('Crocchette', 'Molto buone, testate su esseri umani', '$9999.99', 'pet', 'cibo');
+    class Category {
+        public $type;
+
+        public function __construct($type) {
+            $this->type = $type;
+        }
+    }
+
+    $crochette = new Products('Crocchette', 'Molto buone, testate su esseri umani', '$9999.99', new Category('cani'), 'cibo');
     var_dump($crochette);
 
 ?>
