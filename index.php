@@ -45,6 +45,20 @@
         }
     }
 
+    class SubCategory extends Category {
+        public $foods;
+        public $games;
+        public $kennels;
+
+        public function __construct($type, $foods, $games, $kennels) {
+            parent::__construct($type);
+
+            $this->foods = $foods;
+            $this->games = $games;
+            $this->kennels = $price;
+        }
+    }
+
     $crochette = new Products('Crocchette', 'Molto buone, testate su esseri umani', '$9999.99', new Category('cani'), 'cibo');
     var_dump($crochette);
 
