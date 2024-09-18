@@ -3,16 +3,10 @@
     class Products {
         public $name;
         public $description;
-        public $price;
-        private $category;
-        protected $subcategory;
 
-        public function __construct($name, $description, $price, Category $category, $subcategory) {
+        public function __construct($name, $description) {
             $this->name = $name;
             $this->description = $description;
-            $this->price = $price;
-            $this->category = $category;
-            $this->subcategory = $subcategory;
         }
 
         public function getName() {
@@ -23,48 +17,39 @@
             return $this->description;
         }
 
-        public function getPrice() {
-            return $this->price;
-        }
-
-        public function getCategory() {
-            return $this->category->type;
-        }
-
-        public function getSubCategory() {
-            return $this->subcategory;
-        }
-
     }
 
     class Category {
-        public $type;
+        public $pet;
 
-        public function __construct($type) {
-            $this->type = $type;
+        public function __construct($pet) {
+            $this->pet = $pet;
         }
     }
 
-    class SubCategory extends Category {
-        public $foods;
-        public $games;
-        public $kennels;
+    class Food extends Products {
+        public $brand;
+        public $price;
+        public $pet;
 
-        public function __construct($type, $foods, $games, $kennels) {
-            parent::__construct($type);
+        public function __construct($name, $description, $brand, $price, $pet) {
+            parent::__construct($name, $description);
 
-            $this->foods = $foods;
-            $this->games = $games;
-            $this->kennels = $price;
+            $this->brand = $brand;
+            $this->price = $price;
+            $this->pet = $pet;
         }
+
     }
 
-    $crochette = new Products('Crocchette', 'Molto buone, testate su esseri umani', '$9999.99', new Category('cani'), 'cibo');
-    var_dump($crochette);
+    
+
+    $dogFood = new Food('Dog Food', 'ciao ciao ciao', 'Ultima', '100', new Category('dog'));
+    var_dump($dogFood);
 
 ?>
 
-<!DOCTYPE html>
+<!DOCpet html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
