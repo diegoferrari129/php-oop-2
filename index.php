@@ -1,20 +1,22 @@
 <?php
 
-    class Products {
+    class Product {
         public $name;
-        public $description;
+        public $image;
+        public $price;
+        public $is_available;
+        public $category;
 
-        public function __construct($name, $description) {
+        public function __construct($name, $image, $price, $is_available = true, Category $category) {
             $this->name = $name;
-            $this->description = $description;
+            $this->image = $image;
+            $this->price = $price;
+            $this->is_avaible = $is_available;
+            $this->category = $category;
         }
 
-        public function getName() {
-            return $this->name;
-        }
-
-        public function getDescription() {
-            return $this->description;
+        public function getProductInfo() {
+            return 'Name'.$this->name.',Price'.$this->price;
         }
 
     }
