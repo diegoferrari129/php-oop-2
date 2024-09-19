@@ -22,32 +22,29 @@
     }
 
     class Category {
-        public $pet;
+        public $name;
 
-        public function __construct($pet) {
-            $this->pet = $pet;
+        public function __construct($name) {
+            $this->name = $name;
         }
     }
 
-    class Food extends Products {
-        public $brand;
-        public $price;
-        public $pet;
+    class Food extends Product {
+        protected $calories;
 
-        public function __construct($name, $description, $brand, $price, $pet) {
-            parent::__construct($name, $description);
+        public function __construct($name, $image, $price, $is_available = true, Category $category) {
+            parent::__construct($name, $image, $price, $is_available, $category);
+        }
 
-            $this->brand = $brand;
-            $this->price = $price;
-            $this->pet = $pet;
+        public function setCalories($calories){
+            $this->calories = $calories;
+        }
+
+        public function getCalories() {
+            return $this->calories;
         }
 
     }
-
-    
-
-    $dogFood = new Food('Dog Food', 'ciao ciao ciao', 'Ultima', '100', new Category('dog'));
-    var_dump($dogFood);
 
 ?>
 
