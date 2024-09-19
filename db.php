@@ -10,15 +10,18 @@
     $dog = new Category('Dogs', 'fa-solid fa-dog');
     $cat = new Category('Cats', 'fa-solid fa-cat');
 
-    $product = new Product('Collar', 'https://picsum.photos/200/300', '20.80', true, $dog);
-    $product->setColor('Red');
+    $product = new Product('Collar', 'https://picsum.photos/200/300', '20.00', true, $dog);
+    try{
+        $product->setColor(22);
+    }
+    catch(Exception $e){
+        echo $e->getMessage();
+    }
 
     // istanza della classe Food e associo la categoria
     $food = new Food('Croquettes', 'https://picsum.photos/200/300', '12.99', true, $dog);
-
-    // richiamo il setter setCalories e gli assegno un valore
-    $food->setCalories('4060Kcal');
-
+    $food->setCalories('4060');
+  
     // var_dump($food);
     // var_dump($food->getProductInfo());
 
