@@ -34,6 +34,24 @@
                             <?php echo $product->category->name ?>
                         </p>
                         <p>
+                            Product Type:
+                            <?php
+                                $className = $product->getClassName();
+                                if($className == 'Food') {
+                                    echo 'Food'.'<br>';
+                                    echo 'Calories: '.$product->getCalories();
+                                }
+                                else if($className == 'Game') {
+                                    echo 'Game'.'<br>';
+                                    echo 'Material: '.$product->getType();
+                                }
+                                else if($className == 'Kennel') {
+                                    echo 'Kennel'.'<br>';
+                                    echo 'Size: '.$product->getSize();
+                                }
+                            ?>
+                        </p>
+                        <p>
                             <?php echo $product->getProductInfo(); ?>
                         </p>
                     </div>

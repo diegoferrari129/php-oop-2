@@ -15,7 +15,7 @@
 
     // richiamo il setter setCalories e gli assegno un valore
     $food->setCalories(9000);
-    
+
     // var_dump($food);
     // var_dump($food->getProductInfo());
 
@@ -24,7 +24,7 @@
     // var_dump($game);
     // var_dump($game->getProductInfo());
 
-    $kennel = new Kennel('Kennel', 'https://picsum.photos/200/300', '99.99', true, $dog);
+    $kennel = new Kennel('Padded', 'https://picsum.photos/200/300', '99.99', true, $dog);
     $kennel->setSize('999x999x999');
     // var_dump($kennel);
     // var_dump($kennel->getProductInfo());

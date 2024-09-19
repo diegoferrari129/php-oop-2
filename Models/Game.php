@@ -22,6 +22,9 @@
             return $this->type;
         }
 
+        public function getClassName(){
+            return get_class($this);
+        }
     }
 
 ?>

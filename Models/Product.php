@@ -21,7 +21,7 @@
         // definisco un metodo per restituire una stringa che contiene i valori assegnati
         public function getProductInfo() {
 
-           $info = 'Price:'.' '.$this->price.' ';
+           $info = 'Price:'.' '.$this->price.'$ <br>';
 
            if($this->is_available){
                $info .= 'Available';
