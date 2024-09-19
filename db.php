@@ -11,24 +11,28 @@
     $cat = new Category('Cats');
 
     // istanza della classe Food e associo la categoria
-    $food = new Food('Crochette', 'immagine', '99.99', true, $dog);
+    $food = new Food('Croquettes', 'https://picsum.photos/200/300', '99.99', true, $dog);
 
     // richiamo il setter setCalories e gli assegno un valore
     $food->setCalories(9000);
+    
+    // var_dump($food);
+    // var_dump($food->getProductInfo());
 
-    var_dump($food);
-    var_dump($food->getProductInfo());
-
-    $game = new Game('Gomitolo', 'immagine', '99.99', false, $cat);
+    $game = new Game('Ball of yarn', 'https://picsum.photos/200/300', '99.99', false, $cat);
     $game->setType('lana');
+    // var_dump($game);
+    // var_dump($game->getProductInfo());
 
-    var_dump($game);
-    var_dump($game->getProductInfo());
-
-    $kennel = new Kennel('Bed', 'immagine', '99.99', true, $dog);
+    $kennel = new Kennel('Kennel', 'https://picsum.photos/200/300', '99.99', true, $dog);
     $kennel->setSize('999x999x999');
+    // var_dump($kennel);
+    // var_dump($kennel->getProductInfo());
 
-    var_dump($kennel);
-    var_dump($kennel->getProductInfo());
+    $products = [
+        $food,
+        $game,
+        $kennel
+    ];
 
 ?>
