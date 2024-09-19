@@ -7,6 +7,7 @@
         public $image;
         public $price;
         public $is_available;
+        private $color;
         public $category; // istanza della classe Category che devo passare come argomento
 
         // utilizzo il costruttore per inizializzare le proprietà
@@ -21,7 +22,7 @@
         // definisco un metodo per restituire una stringa che contiene i valori assegnati
         public function getProductInfo() {
 
-           $info = 'Price:'.' '.$this->price.'$ <br>';
+           $info = 'Price:'.' '.$this->price.'€ <br>';
 
            if($this->is_available){
                $info .= 'Available';
@@ -35,6 +36,17 @@
 
         }
 
+        public function setColor($color) {
+            $this->color = $color;
+        }
+
+        public function getColor() {
+            return $this->color;
+        }
+
+        public function getClassName(){
+            return get_class($this);
+        }
     }
 
 ?>
